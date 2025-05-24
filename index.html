@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio professionnel d'un comptable débutant. Services de comptabilité, fiscalité, gestion de paie et conseil financier.">
+    <meta name="keywords" content="comptable, comptabilité, fiscalité, bilan, expert-comptable, gestion financière">
+    <meta name="author" content="ComptaPro">
+    <title>Portfolio - Comptable Professionnel | ComptaPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accounting-blue': '#1e3a8a',
+                        'accounting-green': '#059669',
+                        'accounting-gold': '#d97706',
+                        'dark-bg': '#0f172a',
+                        'card-dark': '#1e293b'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'calculator': 'calculator 3s ease-in-out infinite',
+                        'chart-bar': 'chartBar 2s ease-out forwards'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-dark-bg via-slate-900 to-accounting-blue text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-dark-bg/80 backdrop-blur-lg border-b border-slate-700/50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="calculator-icon relative">
+                        <i class="fas fa-calculator text-2xl text-accounting-gold animate-glow"></i>
+                    </div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-accounting-gold to-accounting-green bg-clip-text text-transparent">
+                        ComptaPro
+                    </span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="nav-link text-gray-300 hover:text-accounting-gold transition-colors duration-300">Accueil</a>
+                    <a href="#competences" class="nav-link text-gray-300 hover:text-accounting-gold transition-colors duration-300">Compétences</a>
+                    <a href="#services" class="nav-link text-gray-300 hover:text-accounting-gold transition-colors duration-300">Services</a>
+                    <a href="#portfolio" class="nav-link text-gray-300 hover:text-accounting-gold transition-colors duration-300">Portfolio</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-accounting-gold transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white text-xl" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-dark-bg/95 backdrop-blur-lg z-40 transform -translate-x-full transition-transform duration-300">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+            <a href="#accueil" class="mobile-nav-link text-gray-300 hover:text-accounting-gold transition-colors">Accueil</a>
+            <a href="#competences" class="mobile-nav-link text-gray-300 hover:text-accounting-gold transition-colors">Compétences</a>
+            <a href="#services" class="mobile-nav-link text-gray-300 hover:text-accounting-gold transition-colors">Services</a>
+            <a href="#portfolio" class="mobile-nav-link text-gray-300 hover:text-accounting-gold transition-colors">Portfolio</a>
+            <a href="#contact" class="mobile-nav-link text-gray-300 hover:text-accounting-gold transition-colors">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-accounting-gold/10 rounded-full animate-float"></div>
+            <div class="absolute top-40 right-20 w-32 h-32 bg-accounting-green/10 rounded-full animate-float" style="animation-delay: -2s;"></div>
+            <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-accounting-blue/20 rounded-full animate-float" style="animation-delay: -4s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-slide-up">
+                <!-- Calculator Animation -->
+                <div class="calculator-display mb-8 mx-auto w-64 h-80 bg-gradient-to-b from-card-dark to-slate-800 rounded-2xl p-6 shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                    <div class="screen bg-gray-900 rounded-lg p-4 mb-4 h-16 flex items-center justify-end">
+                        <span class="text-accounting-gold font-mono text-xl" id="calculator-display">100,000.00 €</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2">
+                        <div class="calc-btn bg-accounting-blue/20 rounded-lg p-2 text-center text-sm">C</div>
+                        <div class="calc-btn bg-accounting-blue/20 rounded-lg p-2 text-center text-sm">±</div>
+                        <div class="calc-btn bg-accounting-blue/20 rounded-lg p-2 text-center text-sm">%</div>
+                        <div class="calc-btn bg-accounting-gold/30 rounded-lg p-2 text-center text-sm">÷</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">7</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">8</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">9</div>
+                        <div class="calc-btn bg-accounting-gold/30 rounded-lg p-2 text-center text-sm">×</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">4</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">5</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">6</div>
+                        <div class="calc-btn bg-accounting-gold/30 rounded-lg p-2 text-center text-sm">-</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">1</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">2</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">3</div>
+                        <div class="calc-btn bg-accounting-gold/30 rounded-lg p-2 text-center text-sm">+</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm col-span-2">0</div>
+                        <div class="calc-btn bg-gray-700 rounded-lg p-2 text-center text-sm">,</div>
+                        <div class="calc-btn bg-accounting-green/40 rounded-lg p-2 text-center text-sm">=</div>
+                    </div>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-accounting-gold via-white to-accounting-green bg-clip-text text-transparent">
+                        Comptable
+                    </span>
+                    <br>
+                    <span class="text-accounting-blue">Professionnel</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Expertise comptable débutante avec une passion pour l'innovation financière et la précision des chiffres
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                    <button class="cta-button bg-gradient-to-r from-accounting-gold to-accounting-green hover:from-accounting-green hover:to-accounting-gold text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-chart-line mr-3"></i>
+                        Découvrir mes services
+                    </button>
+                    <button class="cta-button-secondary border-2 border-accounting-gold text-accounting-gold hover:bg-accounting-gold hover:text-dark-bg px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                        <i class="fas fa-download mr-3"></i>
+                        Télécharger CV
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-accounting-gold text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gradient-to-r from-card-dark to-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="stat-card text-center p-6 rounded-2xl bg-dark-bg/50 backdrop-blur-lg border border-slate-700/50 hover:border-accounting-gold/50 transition-all duration-300">
+                    <i class="fas fa-file-invoice-dollar text-4xl text-accounting-gold mb-4"></i>
+                    <div class="text-3xl font-bold text-white counter" data-target="50">0</div>
+                    <p class="text-gray-400">Factures traitées</p>
+                </div>
+                <div class="stat-card text-center p-6 rounded-2xl bg-dark-bg/50 backdrop-blur-lg border border-slate-700/50 hover:border-accounting-green/50 transition-all duration-300">
+                    <i class="fas fa-chart-pie text-4xl text-accounting-green mb-4"></i>
+                    <div class="text-3xl font-bold text-white counter" data-target="15">0</div>
+                    <p class="text-gray-400">Bilans réalisés</p>
+                </div>
+                <div class="stat-card text-center p-6 rounded-2xl bg-dark-bg/50 backdrop-blur-lg border border-slate-700/50 hover:border-blue-400/50 transition-all duration-300">
+                    <i class="fas fa-users text-4xl text-blue-400 mb-4"></i>
+                    <div class="text-3xl font-bold text-white counter" data-target="8">0</div>
+                    <p class="text-gray-400">Clients satisfaits</p>
+                </div>
+                <div class="stat-card text-center p-6 rounded-2xl bg-dark-bg/50 backdrop-blur-lg border border-slate-700/50 hover:border-purple-400/50 transition-all duration-300">
+                    <i class="fas fa-certificate text-4xl text-purple-400 mb-4"></i>
+                    <div class="text-3xl font-bold text-white counter" data-target="3">0</div>
+                    <p class="text-gray-400">Certifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section id="competences" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-accounting-gold to-accounting-green bg-clip-text text-transparent">
+                        Mes Compétences
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Une expertise comptable en développement avec des compétences solides en gestion financière
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Skills List -->
+                <div class="space-y-8">
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-lg font-semibold flex items-center">
+                                <i class="fas fa-calculator text-accounting-gold mr-3"></i>
+                                Comptabilité Générale
+                            </span>
+                            <span class="text-accounting-gold font-bold">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="skill-bar bg-gradient-to-r from-accounting-gold to-accounting-green h-full rounded-full" style="width: 0%" data-width="85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-lg font-semibold flex items-center">
+                                <i class="fas fa-chart-bar text-accounting-green mr-3"></i>
+                                Analyse Financière
+                            </span>
+                            <span class="text-accounting-green font-bold">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="skill-bar bg-gradient-to-r from-accounting-green to-blue-400 h-full rounded-full" style="width: 0%" data-width="75%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-lg font-semibold flex items-center">
+                                <i class="fas fa-file-alt text-blue-400 mr-3"></i>
+                                Déclarations Fiscales
+                            </span>
+                            <span class="text-blue-400 font-bold">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="skill-bar bg-gradient-to-r from-blue-400 to-purple-400 h-full rounded-full" style="width: 0%" data-width="70%"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-lg font-semibold flex items-center">
+                                <i class="fas fa-laptop text-purple-400 mr-3"></i>
+                                Logiciels Comptables
+                            </span>
+                            <span class="text-purple-400 font-bold">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+                            <div class="skill-bar bg-gradient-to-r from-purple-400 to-accounting-gold h-full rounded-full" style="width: 0%" data-width="80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Chart -->
+                <div class="relative">
+                    <div class="chart-container bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl p-8 shadow-2xl">
+                        <h3 class="text-2xl font-bold text-center mb-8 text-accounting-gold">Répartition des Compétences</h3>
+                        <div class="relative h-64 flex items-end justify-center space-x-4">
+                            <div class="chart-bar bg-gradient-to-t from-accounting-gold to-yellow-300 w-12 rounded-t-lg" style="height: 0%" data-height="85%">
+                                <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm font-bold">85%</div>
+                            </div>
+                            <div class="chart-bar bg-gradient-to-t from-accounting-green to-green-300 w-12 rounded-t-lg" style="height: 0%" data-height="75%">
+                                <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm font-bold">75%</div>
+                            </div>
+                            <div class="chart-bar bg-gradient-to-t from-blue-400 to-blue-300 w-12 rounded-t-lg" style="height: 0%" data-height="70%">
+                                <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm font-bold">70%</div>
+                            </div>
+                            <div class="chart-bar bg-gradient-to-t from-purple-400 to-purple-300 w-12 rounded-t-lg" style="height: 0%" data-height="80%">
+                                <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 text-sm font-bold">80%</div>
+                            </div>
+                        </div>
+                        <div class="flex justify-center space-x-4 mt-8 text-sm">
+                            <span class="text-accounting-gold">Comptabilité</span>
+                            <span class="text-accounting-green">Analyse</span>
+                            <span class="text-blue-400">Fiscal</span>
+                            <span class="text-purple-400">Logiciels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-br from-slate-900 to-card-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-accounting-green to-blue-400 bg-clip-text text-transparent">
+                        Mes Services
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Des services comptables adaptés aux besoins des petites et moyennes entreprises
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700/50 hover:border-accounting-gold/50 transform hover:-translate-y-2">
+                    <div class="service-icon mb-6 p-4 bg-accounting-gold/10 rounded-2xl w-fit group-hover:bg-accounting-gold/20 transition-colors duration-300">
+                        <i class="fas fa-file-invoice text-3xl text-accounting-gold"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-accounting-gold transition-colors duration-300">Tenue de Comptabilité</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Gestion complète de votre comptabilité quotidienne, saisie des écritures et suivi des opérations.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-accounting-gold mr-2"></i>Saisie des factures</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accounting-gold mr-2"></i>Rapprochement bancaire</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accounting-gold mr-2"></i>Suivi des paiements</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <span class="text-2xl font-bold text-accounting-gold">À partir de 200€/mois</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700/50 hover:border-accounting-green/50 transform hover:-translate-y-2">
+                    <div class="service-icon mb-6 p-4 bg-accounting-green/10 rounded-2xl w-fit group-hover:bg-accounting-green/20 transition-colors duration-300">
+                        <i class="fas fa-chart-pie text-3xl text-accounting-green"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-accounting-green transition-colors duration-300">Bilans & Comptes de Résultat</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Établissement des documents comptables annuels et analyse de la performance financière.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-accounting-green mr-2"></i>Bilan comptable</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accounting-green mr-2"></i>Compte de résultat</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accounting-green mr-2"></i>Annexes légales</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <span class="text-2xl font-bold text-accounting-green">À partir de 500€</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700/50 hover:border-blue-400/50 transform hover:-translate-y-2">
+                    <div class="service-icon mb-6 p-4 bg-blue-400/10 rounded-2xl w-fit group-hover:bg-blue-400/20 transition-colors duration-300">
+                        <i class="fas fa-percentage text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors duration-300">Déclarations Fiscales</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Préparation et dépôt de vos déclarations fiscales dans les délais réglementaires.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>TVA mensuelle/trimestrielle</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>Déclaration de résultats</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i>Suivi des échéances</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <span class="text-2xl font-bold text-blue-400">À partir de 150€</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700/50 hover:border-purple-400/50 transform hover:-translate-y-2">
+                    <div class="service-icon mb-6 p-4 bg-purple-400/10 rounded-2xl w-fit group-hover:bg-purple-400/20 transition-colors duration-300">
+                        <i class="fas fa-calculator text-3xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-purple-400 transition-colors duration-300">Conseil & Optimisation</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Conseils personnalisés pour optimiser votre gestion financière et fiscale.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>Optimisation fiscale</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>Tableau de bord</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-400 mr-2"></i>Prévisionnel</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <span class="text-2xl font-bold text-purple-400">Sur devis</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700/50 hover:border-pink-400/50 transform hover:-translate-y-2">
+                    <div class="service-icon mb-6 p-4 bg-pink-400/10 rounded-2xl w-fit group-hover:bg-pink-400/20 transition-colors duration-300">
+                        <i class="fas fa-users text-3xl text-pink-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-pink-400 transition-colors duration-300">Gestion de Paie</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Établissement des bulletins de paie et gestion des obligations sociales.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Bulletins de paie</li>
+                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Déclarations sociales</li>
+                        <li class="flex items-center"><i class="fas fa-check text-pink-400 mr-2"></i>Suivi des congés</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <span class="text-2xl font-bold text-pink-400">25€/bulletin</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-700/50 hover:border-green-400/50 transform hover:-translate-y-2">
+                    <div class="service-icon mb-6 p-4 bg-green-400/10 rounded-2xl w-fit group-hover:bg-green-400/20 transition-colors duration-300">
+                        <i class="fas fa-building text-3xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors duration-300">Création d'Entreprise</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Accompagnement dans les démarches de création et choix du statut juridique.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i>Étude de faisabilité</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i>Choix du statut</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i>Formalités légales</li>
+                    </ul>
+                    <div class="mt-6 pt-6 border-t border-gray-700">
+                        <span class="text-2xl font-bold text-green-400">À partir de 300€</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Portfolio
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Quelques exemples de projets et réalisations comptables
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-accounting-gold to-yellow-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chart-area text-6xl text-white/80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-accounting-gold transition-colors">Analyse Financière - Restaurant</h3>
+                        <p class="text-gray-400 mb-4">Mise en place d'un tableau de bord financier pour un restaurant, analyse de la rentabilité par produit.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-accounting-gold bg-accounting-gold/20 px-3 py-1 rounded-full">Analyse</span>
+                            <button class="text-accounting-gold hover:text-white transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-accounting-green to-green-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-file-alt text-6xl text-white/80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-accounting-green transition-colors">Optimisation Fiscale - E-commerce</h3>
+                        <p class="text-gray-400 mb-4">Restructuration comptable et optimisation fiscale pour une boutique en ligne en croissance.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-accounting-green bg-accounting-green/20 px-3 py-1 rounded-full">Fiscal</span>
+                            <button class="text-accounting-green hover:text-white transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item group bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-building text-6xl text-white/80"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">Création SARL - Consulting</h3>
+                        <p class="text-gray-400 mb-4">Accompagnement complet dans la création d'une SARL de conseil, du business plan aux formalités.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-blue-400 bg-blue-400/20 px-3 py-1 rounded-full">Création</span>
+                            <button class="text-blue-400 hover:text-white transition-colors">
+                                <i class="fas fa-external-link-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-slate-900 to-dark-bg">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-purple-400 to-accounting-gold bg-clip-text text-transparent">
+                        Contactez-moi
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Prêt à optimiser votre comptabilité ? Discutons de vos besoins !
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="contact-item flex items-center space-x-4 p-6 bg-gradient-to-r from-card-dark to-slate-800 rounded-2xl border border-slate-700/50 hover:border-accounting-gold/50 transition-all duration-300">
+                        <div class="w-12 h-12 bg-accounting-gold/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-envelope text-accounting-gold text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white">Email</h3>
+                            <p class="text-gray-400">contact@comptapro.fr</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item flex items-center space-x-4 p-6 bg-gradient-to-r from-card-dark to-slate-800 rounded-2xl border border-slate-700/50 hover:border-accounting-green/50 transition-all duration-300">
+                        <div class="w-12 h-12 bg-accounting-green/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-phone text-accounting-green text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white">Téléphone</h3>
+                            <p class="text-gray-400">+33 1 23 45 67 89</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item flex items-center space-x-4 p-6 bg-gradient-to-r from-card-dark to-slate-800 rounded-2xl border border-slate-700/50 hover:border-blue-400/50 transition-all duration-300">
+                        <div class="w-12 h-12 bg-blue-400/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white">Localisation</h3>
+                            <p class="text-gray-400">Paris, France</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item flex items-center space-x-4 p-6 bg-gradient-to-r from-card-dark to-slate-800 rounded-2xl border border-slate-700/50 hover:border-purple-400/50 transition-all duration-300">
+                        <div class="w-12 h-12 bg-purple-400/20 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-clock text-purple-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-white">Horaires</h3>
+                            <p class="text-gray-400">Lun-Ven: 9h-18h</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-gradient-to-br from-card-dark to-slate-800 rounded-3xl p-8 border border-slate-700/50">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-300 text-sm font-semibold mb-2">Nom</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-gray-400 focus:border-accounting-gold focus:outline-none transition-colors duration-300" placeholder="Votre nom">
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 text-sm font-semibold mb-2">Email</label>
+                                <input type="email" required class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-gray-400 focus:border-accounting-gold focus:outline-none transition-colors duration-300" placeholder="votre@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 text-sm font-semibold mb-2">Sujet</label>
+                            <select class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white focus:border-accounting-gold focus:outline-none transition-colors duration-300">
+                                <option>Demande de devis</option>
+                                <option>Question générale</option>
+                                <option>Prise de rendez-vous</option>
+                                <option>Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 text-sm font-semibold mb-2">Message</label>
+                            <textarea rows="5" required class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-gray-400 focus:border-accounting-gold focus:outline-none transition-colors duration-300 resize-none" placeholder="Décrivez vos besoins comptables..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-accounting-gold to-accounting-green hover:from-accounting-green hover:to-accounting-gold text-white py-4 rounded-xl font-semibold text-lg shadow-lg transform hover:scale-105 transition-all duration-300">
+                            <i class="fas fa-paper-plane mr-3"></i>
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg border-t border-slate-700/50 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-calculator text-2xl text-accounting-gold"></i>
+                        <span class="text-xl font-bold bg-gradient-to-r from-accounting-gold to-accounting-green bg-clip-text text-transparent">
+                            ComptaPro
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Votre partenaire comptable pour une gestion financière optimisée et des conseils personnalisés.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-accounting-gold/20 rounded-lg flex items-center justify-center text-accounting-gold hover:bg-accounting-gold hover:text-white transition-all duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-400/20 rounded-lg flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-accounting-green/20 rounded-lg flex items-center justify-center text-accounting-green hover:bg-accounting-green hover:text-white transition-all duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-accounting-gold transition-colors">Comptabilité</a></li>
+                        <li><a href="#" class="hover:text-accounting-gold transition-colors">Fiscalité</a></li>
+                        <li><a href="#" class="hover:text-accounting-gold transition-colors">Paie</a></li>
+                        <li><a href="#" class="hover:text-accounting-gold transition-colors">Conseil</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>+33 1 23 45 67 89</li>
+                        <li>contact@comptapro.fr</li>
+                        <li>Paris, France</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700/50 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 ComptaPro. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "name": "youssef-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio professionnel moderne pour aide comptable",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --open=/index.html",
+    "build": "echo 'Building production version...'",
+    "deploy": "echo 'Deploying to production...'",
+    "lint": "echo 'Linting code...'",
+    "test": "echo 'Running tests...'"
+  },
+  "keywords": [
+    "portfolio",
+    "comptabilité",
+    "aide-comptable",
+    "bootstrap",
+    "javascript",
+    "responsive"
+  ],
+  "author": "Youssef",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/youssef-portfolio.git"
+  },
+  "homepage": "https://yourusername.github.io/youssef-portfolio",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

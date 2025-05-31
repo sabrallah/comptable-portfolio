@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef - Aide Comptable</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <i class="fas fa-calculator me-2"></i>Youssef
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Formation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-3">
+                            Bonjour, je suis <span class="text-primary">Youssef</span>
+                        </h1>
+                        <h2 class="h3 text-muted mb-4">Aide Comptable Débutant</h2>
+                        <p class="lead mb-4">
+                            Passionné par les chiffres et la précision, je mets mes compétences comptables 
+                            au service de votre entreprise pour assurer une gestion financière rigoureuse.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-envelope me-2"></i>Me contacter
+                            </a>
+                            <a href="#about" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-user me-2"></i>En savoir plus
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image text-center">
+                        <div class="profile-card">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="floating-elements">
+                                <div class="floating-icon" style="--delay: 0s">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="floating-icon" style="--delay: 1s">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                </div>
+                                <div class="floating-icon" style="--delay: 2s">
+                                    <i class="fas fa-calculator"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">À propos de moi</h2>
+                    <p class="section-subtitle">Découvrez mon parcours et mes motivations</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-content">
+                        <h3 class="h4 mb-4">Mon profil professionnel</h3>
+                        <p class="mb-4">
+                            En tant qu'aide comptable débutant, je suis motivé par l'apprentissage continu 
+                            et l'excellence dans la gestion financière. Mon approche méthodique et ma rigueur 
+                            me permettent de traiter efficacement les données comptables.
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <i class="fas fa-calendar-alt text-primary me-2"></i>
+                                    <strong>Âge:</strong> 25 ans
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                    <strong>Localisation:</strong> Maroc
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <i class="fas fa-language text-primary me-2"></i>
+                                    <strong>Langues:</strong> Français, Arabe
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="info-item">
+                                    <i class="fas fa-briefcase text-primary me-2"></i>
+                                    <strong>Statut:</strong> Disponible
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Heures de formation</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="stat-number">8+</div>
+                            <div class="stat-label">Logiciels maîtrisés</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Motivation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">Mes Compétences</h2>
+                    <p class="section-subtitle">Technologies et outils que je maîtrise</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h4 class="mb-4">Compétences Techniques</h4>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold">Excel / Tableurs</span>
+                            <span class="text-primary">85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold">Sage Comptabilité</span>
+                            <span class="text-primary">75%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold">Facturation</span>
+                            <span class="text-primary">80%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-semibold">Paie</span>
+                            <span class="text-primary">70%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h4 class="mb-4">Compétences Transversales</h4>
+                    <div class="soft-skills">
+                        <div class="soft-skill-item">
+                            <i class="fas fa-eye text-primary"></i>
+                            <span>Attention aux détails</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-clock text-primary"></i>
+                            <span>Gestion du temps</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-users text-primary"></i>
+                            <span>Travail d'équipe</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-comments text-primary"></i>
+                            <span>Communication</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-shield-alt text-primary"></i>
+                            <span>Confidentialité</span>
+                        </div>
+                        <div class="soft-skill-item">
+                            <i class="fas fa-chart-line text-primary"></i>
+                            <span>Analyse financière</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">Mes Services</h2>
+                    <p class="section-subtitle">Ce que je peux apporter à votre entreprise</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h5>Saisie Comptable</h5>
+                        <p>Enregistrement précis et méthodique de toutes vos opérations comptables dans le respect des normes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-receipt"></i>
+                        </div>
+                        <h5>Facturation</h5>
+                        <p>Établissement et suivi des factures clients, gestion des échéances et relances.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-money-check-alt"></i>
+                        </div>
+                        <h5>Gestion Fournisseurs</h5>
+                        <p>Traitement des factures fournisseurs, vérifications et préparation des paiements.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h5>Rapprochements</h5>
+                        <p>Rapprochements bancaires et contrôles de cohérence pour assurer la fiabilité des comptes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h5>Reporting</h5>
+                        <p>Préparation de tableaux de bord et rapports financiers pour le suivi de l'activité.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card h-100">
+                        <div class="service-icon">
+                            <i class="fas fa-archive"></i>
+                        </div>
+                        <h5>Archivage</h5>
+                        <p>Organisation et archivage numérique des documents comptables selon les normes légales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">Formation & Certifications</h2>
+                    <p class="section-subtitle">Mon parcours d'apprentissage</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="timeline">
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5>Formation Aide Comptable</h5>
+                                <p class="text-muted mb-2">2024 - En cours</p>
+                                <p>Formation complète en comptabilité générale, paie, et fiscalité avec mise en pratique sur logiciels professionnels.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5>Certification Excel Avancé</h5>
+                                <p class="text-muted mb-2">2024</p>
+                                <p>Maîtrise des fonctions avancées d'Excel : tableaux croisés dynamiques, macros, formules complexes.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5>Formation Sage Comptabilité</h5>
+                                <p class="text-muted mb-2">2023</p>
+                                <p>Formation pratique sur le logiciel Sage : paramétrage, saisie, éditions, et clôtures comptables.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h5>Baccalauréat Sciences Économiques</h5>
+                                <p class="text-muted mb-2">2022</p>
+                                <p>Solides bases en économie, gestion, et mathématiques financières.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5" data-aos="fade-up">
+                    <h2 class="section-title">Contactez-moi</h2>
+                    <p class="section-subtitle">Prêt à collaborer avec vous</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-right">
+                    <div class="contact-info">
+                        <div class="contact-item mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h6>Email</h6>
+                                <p>youssef.comptable@email.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h6>Téléphone</h6>
+                                <p>+212 6XX XXX XXX</p>
+                            </div>
+                        </div>
+                        <div class="contact-item mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h6>Localisation</h6>
+                                <p>Casablanca, Maroc</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left">
+                    <form class="contact-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" placeholder="Votre nom" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" placeholder="Votre email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Sujet" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane me-2"></i>Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 Youssef - Aide Comptable. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Conçu avec <i class="fas fa-heart text-danger"></i> pour votre réussite</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

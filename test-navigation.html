@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Navigation - Portfolio Comptable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f8fafc;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+        .nav-test {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .nav-link {
+            display: block;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #3b82f6 0%, #06d6a0 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: #dcfce7;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            color: #166534;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test de Navigation - Portfolio Comptable</h1>
+        <p>Cliquez sur les liens ci-dessous pour tester la navigation entre toutes les pages du portfolio :</p>
+        
+        <div class="nav-test">
+            <a href="index.html" class="nav-link">🏠 Accueil</a>
+            <a href="pages/about.html" class="nav-link">👤 À propos</a>
+            <a href="pages/skills.html" class="nav-link">💼 Compétences</a>
+            <a href="pages/services.html" class="nav-link">🔧 Services</a>
+            <a href="pages/education.html" class="nav-link">🎓 Formation</a>
+            <a href="pages/contact.html" class="nav-link">📞 Contact</a>
+        </div>
+        
+        <div class="status">
+            <strong>✅ Structure du Projet Organisée :</strong><br>
+            • Navigation transformée de liens d'ancres vers pages séparées<br>
+            • Pages individuelles créées avec contenu enrichi<br>
+            • Styles CSS étendus pour tous les nouveaux composants<br>
+            • Header et footer modulaires pour réutilisation<br>
+            • Responsive design maintenu sur tous les écrans
+        </div>
+    </div>
+
+    <script>
+        // Test automatique des liens
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    console.log('Navigation vers:', this.getAttribute('href'));
+                });
+            });
+        });
+    </script>
+</body>
+</html>

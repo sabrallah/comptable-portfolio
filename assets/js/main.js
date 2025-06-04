@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initTypingEffect();
     initParticleBackground();
     initSmoothScrolling();
+    initStatsCounter(); // Ajouter l'initialisation des compteurs
 });
 
 // Navigation functionality
@@ -399,40 +400,79 @@ function initSmoothScrolling() {
     });
 }
 
-// Stats counter animation
+// ==========================================
+// COMPTEURS DE STATISTIQUES
+// ==========================================
+
 function initStatsCounter() {
+    const statsSection = document.querySelector('.stats-section');
+    if (!statsSection) return;
+
     const statNumbers = document.querySelectorAll('.stat-number');
-    
+    let hasAnimated = false;
+
+    // Observer pour déclencher l'animation quand la section est visible
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const element = entry.target;
-                const finalValue = element.textContent.replace(/[^\d]/g, '');
-                const duration = 2000;
-                const startTime = performance.now();
-                
-                function updateCounter(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    
-                    const currentValue = Math.floor(finalValue * progress);
-                    const suffix = element.textContent.replace(/[\d]/g, '');
-                    element.textContent = currentValue + suffix;
-                    
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    }
-                }
-                
-                requestAnimationFrame(updateCounter);
-                observer.unobserve(element);
+            if (entry.isIntersecting && !hasAnimated) {
+                hasAnimated = true;
+                animateCounters();
             }
         });
-    }, { threshold: 0.5 });
-    
-    statNumbers.forEach(stat => {
-        observer.observe(stat);
+    }, {
+        threshold: 0.5
     });
+
+    observer.observe(statsSection);
+
+    function animateCounters() {
+        statNumbers.forEach(statNumber => {
+            const target = parseInt(statNumber.getAttribute('data-count'));
+            const duration = 2000; // 2 secondes
+            const increment = target / (duration / 16); // 60 FPS
+            let current = 0;
+
+            statNumber.classList.add('animated');
+
+            const timer = setInterval(() => {
+                current += increment;
+                
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                statNumber.textContent = Math.floor(current);
+            }, 16);
+        });
+    }
+}
+
+// Fonction d'animation fluide pour les compteurs
+function easeOutQuart(t) {
+    return 1 - (--t) * t * t * t;
+}
+
+function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const startTime = performance.now();
+    
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Utiliser une fonction d'easing pour une animation plus fluide
+        const easedProgress = easeOutQuart(progress);
+        const current = Math.floor(start + (target - start) * easedProgress);
+        
+        element.textContent = current;
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    
+    requestAnimationFrame(update);
 }
 
 // Initialize stats counter

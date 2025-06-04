@@ -9,7 +9,7 @@ AOS.init({
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
-    initNavigation();
+    initModernNavigation(); // Nouvelle navigation moderne
     initSkillBars();
     initContactForm();
     initScrollEffects();
@@ -19,7 +19,117 @@ document.addEventListener('DOMContentLoaded', function() {
     initStatsCounter(); // Ajouter l'initialisation des compteurs
 });
 
-// Navigation functionality
+// ==========================================
+// NAVIGATION MODERNE
+// ==========================================
+
+function initModernNavigation() {
+    const navbar = document.querySelector('.modern-navbar');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileClose = document.getElementById('mobileClose');
+    const navLinks = document.querySelectorAll('.nav-link-modern');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    // Effet de scroll sur la navbar
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Toggle menu mobile
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
+        });
+    }
+
+    // Fermer menu mobile
+    if (mobileClose) {
+        mobileClose.addEventListener('click', closeMobileMenu);
+    }
+
+    // Fermer menu en cliquant sur l'overlay
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    // Fermer menu mobile avec Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenuOverlay.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    function closeMobileMenu() {
+        mobileToggle.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Fermer menu mobile au clic sur un lien
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Gestion des liens actifs
+    const currentPath = window.location.pathname;
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (currentPath.includes(linkPath) || (currentPath === '/' && linkPath === 'index.html')) {
+            link.classList.add('active');
+        }
+    });
+
+    // Animations d'entrée pour les éléments de navigation
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Animation des liens de navigation
+    navLinks.forEach((link, index) => {
+        link.style.opacity = '0';
+        link.style.transform = 'translateY(-20px)';
+        link.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        
+        setTimeout(() => {
+            link.style.opacity = '1';
+            link.style.transform = 'translateY(0)';
+        }, 300 + (index * 100));
+    });
+
+    // Effet de survol avancé pour les liens
+    navLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.setProperty('--hover-scale', '1.05');
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            this.style.setProperty('--hover-scale', '1');
+        });
+    });
+}
+
+// Navigation functionality (ancienne fonction pour compatibilité)
 function initNavigation() {
     const navbar = document.querySelector('.navbar');
     const navLinks = document.querySelectorAll('.nav-link');

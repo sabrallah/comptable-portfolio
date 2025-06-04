@@ -16,40 +16,135 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<body>    <!-- Navigation Moderne -->
+    <nav class="modern-navbar fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">
-                <i class="fas fa-calculator me-2"></i>Youssef
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Accueil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">À propos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="skills.html">Compétences</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="education.html">Formation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                </ul>
+            <div class="navbar-content">
+                <!-- Logo avec animation -->
+                <div class="navbar-brand-modern">
+                    <a href="../index.html" class="brand-link">
+                        <div class="brand-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <div class="brand-text">
+                            <span class="brand-name">Youssef</span>
+                            <span class="brand-subtitle">Expert-Comptable</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Menu de navigation -->
+                <div class="navbar-menu" id="navbarMenu">
+                    <ul class="nav-list">
+                        <li class="nav-item-modern">
+                            <a href="../index.html" class="nav-link-modern">
+                                <i class="fas fa-home nav-icon"></i>
+                                <span>Accueil</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item-modern">
+                            <a href="about.html" class="nav-link-modern">
+                                <i class="fas fa-user nav-icon"></i>
+                                <span>À propos</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item-modern">
+                            <a href="skills.html" class="nav-link-modern">
+                                <i class="fas fa-cogs nav-icon"></i>
+                                <span>Compétences</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item-modern">
+                            <a href="services.html" class="nav-link-modern">
+                                <i class="fas fa-briefcase nav-icon"></i>
+                                <span>Services</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item-modern">
+                            <a href="education.html" class="nav-link-modern active">
+                                <i class="fas fa-graduation-cap nav-icon"></i>
+                                <span>Formation</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                        <li class="nav-item-modern">
+                            <a href="contact.html" class="nav-link-modern contact-btn">
+                                <i class="fas fa-envelope nav-icon"></i>
+                                <span>Contact</span>
+                                <div class="nav-indicator"></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bouton menu mobile -->
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Menu Mobile Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="mobile-brand">
+                    <i class="fas fa-calculator"></i>
+                    <span>Youssef</span>
+                </div>
+                <button class="mobile-close-btn" id="mobileCloseBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li class="mobile-nav-item">
+                        <a href="../index.html" class="mobile-nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="about.html" class="mobile-nav-link">
+                            <i class="fas fa-user"></i>
+                            <span>À propos</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="skills.html" class="mobile-nav-link">
+                            <i class="fas fa-cogs"></i>
+                            <span>Compétences</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="services.html" class="mobile-nav-link">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="education.html" class="mobile-nav-link active">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Formation</span>
+                        </a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a href="contact.html" class="mobile-nav-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <!-- Page Header -->
     <section class="page-header py-5 bg-primary text-white">

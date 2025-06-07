@@ -338,7 +338,7 @@ function initScrollEffects() {
 
 // Typing effect for hero title
 function initTypingEffect() {
-    const titles = ['Aide Comptable Débutant', 'Expert en Saisie', 'Passionné de Chiffres', 'Rigoureux et Précis'];
+    const titles = ['Aide Comptable Expert', 'Expert en Saisie', 'Passionné de Chiffres', 'Rigoureux et Précis'];
     const titleElement = document.querySelector('.hero-content h2');
     
     if (titleElement) {

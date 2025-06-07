@@ -1,6 +1,6 @@
 # Portfolio Youssef - Aide Comptable
 
-Un portfolio moderne et responsive créé avec les dernières technologies web pour présenter mes compétences en tant qu'aide comptable débutant.
+Un portfolio moderne et responsive créé avec les dernières technologies web pour présenter mes compétences en tant qu'aide comptable expert.
 
 ## 🚀 Technologies Utilisées
 

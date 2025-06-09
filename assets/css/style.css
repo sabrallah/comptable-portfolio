@@ -24,6 +24,7 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     overflow-x: hidden;
+    padding-top: 90px; /* Adjust based on navbar height */
 }
 
 /* Smooth Scrolling */
@@ -423,6 +424,19 @@ html {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Reduce padding for smaller screens */
+    }
+    
+    .page-header {
+        padding-top: 4rem; /* Less padding on mobile */
+    }
+    
+    .hero-section {
+        margin-top: -70px;
+        padding-top: 70px;
+    }
+    
     .navbar-menu {
         display: none;
     }
@@ -444,15 +458,88 @@ html {
     .brand-name {
         font-size: 1.2rem;
     }
-}
-
-@media (max-width: 480px) {
-    .mobile-menu-content {
+    
+    .service-card {
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .value-point {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .value-icon {
+        margin: 0 auto;
+    }
+    
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .process-step {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .cta-section .btn {
+        display: block;
+        margin-bottom: 1rem;
         width: 100%;
     }
     
-    .navbar-content {
-        padding: 0.75rem 0;
+    .hero-badges {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .hero-badges .badge {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px; /* Even less padding for very small screens */
+    }
+    
+    .page-header {
+        padding-top: 3rem;
+    }
+    
+    .hero-section {
+        margin-top: -60px;
+        padding-top: 60px;
+    }
+    
+    .service-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .service-header h5 {
+        font-size: 1.2rem;
+    }
+    
+    .testimonial-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .process-cta {
+        padding: 2rem 1.5rem;
     }
 }
 
@@ -591,14 +678,14 @@ html {
     width: 100%;
 }
 
-/* ...existing code... */
-
 /* Hero Section */
 .hero-section {
     min-height: 100vh;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     position: relative;
     overflow: hidden;
+    margin-top: -90px; /* Negative margin to compensate for body padding */
+    padding-top: 90px; /* Add padding back to maintain content positioning */
 }
 
 .hero-section::before {
@@ -964,103 +1051,651 @@ html {
     animation: countUp 0.6s ease-out;
 }
 
-/* Responsive Design */
+/* ==========================================
+   SERVICE CARDS STYLES
+   ========================================== */
+
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.service-card.featured {
+    border: 2px solid #fbbf24;
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+}
+
+.service-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+}
+
+.service-header {
+    margin-bottom: 1rem;
+}
+
+.service-header h5 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.service-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.service-description {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.service-details {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.service-details li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.service-details li:last-child {
+    border-bottom: none;
+}
+
+.service-benefits {
+    background: rgba(16, 185, 129, 0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.hero-badges .badge {
+    font-size: 0.9rem;
+    border-radius: 25px;
+}
+
+/* ==========================================
+   VALUE PROPOSITION SECTION
+   ========================================== */
+
+.value-proposition {
+    padding: 2rem 0;
+}
+
+.value-points {
+    margin: 2rem 0;
+}
+
+.value-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.value-content h5 {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.value-content p {
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.cta-section {
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   TESTIMONIAL CARD
+   ========================================== */
+
+.testimonial-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--primary-color);
+    height: 100%;
+}
+
+.testimonial-content blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.author-info h6 {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.trust-indicators {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.trust-indicators .badge {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}
+
+/* ==========================================
+   ENHANCED PROCESS SECTION
+   ========================================== */
+
+.process-step {
+    position: relative;
+    padding: 2rem 1.5rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto 1.5rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.process-step:hover .step-icon {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
+}
+
+.process-step h5 {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.process-step p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.step-duration {
+    padding: 0.5rem 1rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.process-cta {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(59, 130, 246, 0.1);
+}
+
+.process-cta h4 {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.process-cta p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ==========================================
+   FAQ & FINAL CTA SECTIONS
+   ========================================== */
+
+.accordion-item {
+    border: none;
+    background: white;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: white;
+    border: none;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding: 1.5rem 2rem;
+    border-radius: 15px !important;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--primary-color);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+    padding: 1.5rem 2rem;
+    background: #f8fafc;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+}
+
+.final-cta {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.final-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-2);
+    border-radius: 25px;
+    padding: 2px;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+.final-cta h3 {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.final-cta .lead {
+    color: var(--text-light);
+}
+
+.cta-buttons {
+    margin-bottom: 2rem;
+}
+
+.guarantees {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.guarantee-item {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* ==========================================
+   ENHANCED RESPONSIVE DESIGN
+   ========================================== */
+
 @media (max-width: 768px) {
-    .section-title {
-        font-size: 2rem;
+    body {
+        padding-top: 70px; /* Reduce padding for smaller screens */
     }
     
-    .section-subtitle {
+    .page-header {
+        padding-top: 4rem; /* Less padding on mobile */
+    }
+    
+    .hero-section {
+        margin-top: -70px;
+        padding-top: 70px;
+    }
+    
+    .navbar-menu {
+        display: none;
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+    
+    .brand-subtitle {
+        display: none;
+    }
+    
+    .brand-icon {
+        width: 40px;
+        height: 40px;
         font-size: 1rem;
     }
     
-    .stat-card {
+    .brand-name {
+        font-size: 1.2rem;
+    }
+    
+    .service-card {
         padding: 2rem 1.5rem;
         margin-bottom: 2rem;
     }
     
-    .stat-icon {
+    .service-icon {
         width: 60px;
         height: 60px;
         font-size: 1.5rem;
-        margin-bottom: 1.5rem;
     }
     
-    .stat-number {
-        font-size: 2.5rem;
+    .value-point {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
     }
     
-    .stat-suffix {
-        font-size: 1.8rem;
+    .value-icon {
+        margin: 0 auto;
     }
     
-    .stat-label {
-        font-size: 0.9rem;
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .process-step {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .cta-section .btn {
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    
+    .hero-badges {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .hero-badges .badge {
+        margin-bottom: 0.5rem;
     }
 }
 
 @media (max-width: 576px) {
-    .stats-section {
-        padding: 3rem 0;
+    body {
+        padding-top: 60px; /* Even less padding for very small screens */
     }
     
-    .stat-card {
+    .page-header {
+        padding-top: 3rem;
+    }
+    
+    .hero-section {
+        margin-top: -60px;
+        padding-top: 60px;
+    }
+    
+    .service-card {
         padding: 1.5rem 1rem;
     }
     
-    .stat-number {
-        font-size: 2rem;
+    .service-header h5 {
+        font-size: 1.2rem;
     }
     
-    .stat-suffix {
-        font-size: 1.5rem;
+    .testimonial-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .process-cta {
+        padding: 2rem 1.5rem;
     }
 }
 
-/* Loading Animation */
-.aos-animate {
-    transition-duration: 0.8s;
+/* ==========================================
+   FIXED NAVBAR SPACING FIX
+   ========================================== */
+
+/* Add top padding to body to prevent content from being hidden behind fixed navbar */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    padding-top: 90px; /* Adjust based on navbar height */
 }
 
-/* Custom Utilities */
-.bg-gradient-primary {
-    background: var(--gradient-1);
+/* Ensure page headers have proper spacing */
+.page-header {
+    margin-top: 0;
+    padding-top: 6rem; /* Extra padding for visual breathing room */
 }
 
-.bg-gradient-secondary {
-    background: var(--gradient-2);
+/* Hero section should start from top */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+    margin-top: -90px; /* Negative margin to compensate for body padding */
+    padding-top: 90px; /* Add padding back to maintain content positioning */
 }
 
-.text-gradient {
-    background: var(--gradient-2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* ==========================================
+   RESPONSIVE NAVBAR SPACING ADJUSTMENTS
+   ========================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Reduce padding for smaller screens */
+    }
+    
+    .page-header {
+        padding-top: 4rem; /* Less padding on mobile */
+    }
+    
+    .hero-section {
+        margin-top: -70px;
+        padding-top: 70px;
+    }
 }
 
-/* Hover Effects */
-.hover-lift {
-    transition: all 0.3s ease;
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px; /* Even less padding for very small screens */
+    }
+    
+    .page-header {
+        padding-top: 3rem;
+    }
+    
+    .hero-section {
+        margin-top: -60px;
+        padding-top: 60px;
+    }
 }
 
-.hover-lift:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
-}
-
-/* Glass Effect */
-.glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
+ 
+ / *   = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+       U T I L I T Y   C L A S S E S   &   A N I M A T I O N S 
+       = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =   * / 
+ 
+ / *   L o a d i n g   A n i m a t i o n   * / 
+ . a o s - a n i m a t e   { 
+         t r a n s i t i o n - d u r a t i o n :   0 . 8 s ; 
+ } 
+ 
+ / *   C u s t o m   U t i l i t i e s   * / 
+ . b g - g r a d i e n t - p r i m a r y   { 
+         b a c k g r o u n d :   v a r ( - - g r a d i e n t - 1 ) ; 
+ } 
+ 
+ . b g - g r a d i e n t - s e c o n d a r y   { 
+         b a c k g r o u n d :   v a r ( - - g r a d i e n t - 2 ) ; 
+ } 
+ 
+ . t e x t - g r a d i e n t   { 
+         b a c k g r o u n d :   v a r ( - - g r a d i e n t - 2 ) ; 
+         - w e b k i t - b a c k g r o u n d - c l i p :   t e x t ; 
+         - w e b k i t - t e x t - f i l l - c o l o r :   t r a n s p a r e n t ; 
+         b a c k g r o u n d - c l i p :   t e x t ; 
+ } 
+ 
+ / *   H o v e r   E f f e c t s   * / 
+ . h o v e r - l i f t   { 
+         t r a n s i t i o n :   a l l   0 . 3 s   e a s e ; 
+ } 
+ 
+ . h o v e r - l i f t : h o v e r   { 
+         t r a n s f o r m :   t r a n s l a t e Y ( - 5 p x ) ; 
+         b o x - s h a d o w :   v a r ( - - s h a d o w - x l ) ; 
+ } 
+ 
+ / *   G l a s s   E f f e c t   * / 
+ . g l a s s   { 
+         b a c k g r o u n d :   r g b a ( 2 5 5 ,   2 5 5 ,   2 5 5 ,   0 . 1 ) ; 
+         b a c k d r o p - f i l t e r :   b l u r ( 1 0 p x ) ; 
+         b o r d e r :   1 p x   s o l i d   r g b a ( 2 5 5 ,   2 5 5 ,   2 5 5 ,   0 . 2 ) ; 
+ } 
+ 
+ / *   P u l s e   A n i m a t i o n   * / 
+ @ k e y f r a m e s   p u l s e   { 
+         0 % ,   1 0 0 %   {   t r a n s f o r m :   s c a l e ( 1 ) ;   } 
+         5 0 %   {   t r a n s f o r m :   s c a l e ( 1 . 0 5 ) ;   } 
+ } 
+ 
+ . p u l s e   { 
+         a n i m a t i o n :   p u l s e   2 s   i n f i n i t e ; 
+ }  
+ 
